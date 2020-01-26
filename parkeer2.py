@@ -1,10 +1,10 @@
 import RPi.GPIO as GPIO
 import time
 
-PIN_RED = 22
-PIN_GREEN = 27
-PIN_TRIGGER = 4
-PIN_ECHO = 18
+PIN_RED = 24
+PIN_GREEN = 23
+PIN_TRIGGER =20
+PIN_ECHO = 21
 
 
 def start():
@@ -48,13 +48,14 @@ def turnOnGreen():
     GPIO.output(PIN_GREEN, GPIO.HIGH)
     GPIO.output(PIN_RED, GPIO.LOW)
 
-start()
-while True:
-    distance = calculateDistance()
-    if distance < 20:
-        turnOnRed()
-    else:
-        turnOnGreen()
+def uitvoer():
+    start()
+    while True:
+        distance = calculateDistance()
+        if distance < 20:
+            turnOnRed()
+        else:
+            turnOnGreen()
 
-    time.sleep(0.5)
-    print('distance ', distance)
+        time.sleep(0.5)
+        print('distance ', distance)
