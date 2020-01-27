@@ -5,7 +5,7 @@ PIN_RED = 22
 PIN_GREEN = 27
 PIN_TRIGGER = 26
 PIN_ECHO = 19
-
+plek = 0
 
 def start():
     GPIO.setwarnings(False)
@@ -53,10 +53,11 @@ def uitvoer():
     while True:
         distance = calculateDistance()
         if distance < 20:
+            bezet = False
             turnOnRed()
         else:
+            bezet = True
             turnOnGreen()
 
         time.sleep(0.5)
         print('distance ', distance)
-uitvoer()
