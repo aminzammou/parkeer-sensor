@@ -5,7 +5,7 @@ from mysql.connector import Error
 
 def update():
     import update as up1
-    plekje = str(up1.plek)
+    plekje2 = str(up1.plek2)
     with SSHTunnelForwarder(
         ('remote.ghaut.nl', 22),
         ssh_password="W817tjes",
@@ -19,7 +19,7 @@ def update():
                                              db='prutrecht')
 
         cur = connection.cursor()
-        sql = "UPDATE parkeerplekken SET bezet = " + plekje + " WHERE parkeerplekID = 1 "
+        sql = "UPDATE parkeerplekken SET bezet = " + plekje2 + " WHERE parkeerplekID = 2 "
 
         cur.execute(sql)
 
@@ -29,4 +29,5 @@ def update():
     
         cur.close()
         connection.close()
+
 
