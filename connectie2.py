@@ -4,8 +4,8 @@ from mysql.connector import Error
 
 
 def update():
-    import update as up1
-    plekje2 = str(up1.plek2)
+    import update as up2
+    plekje2 = str(up2.plek2)
     with SSHTunnelForwarder(
         ('remote.ghaut.nl', 22),
         ssh_password="W817tjes",
