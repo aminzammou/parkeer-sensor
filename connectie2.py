@@ -2,7 +2,7 @@ from sshtunnel import SSHTunnelForwarder
 import mysql.connector
 from mysql.connector import Error
 
-
+# function for updating data in the database
 def update():
     import update as up2
     plekje2 = str(up2.plek2)
@@ -11,7 +11,8 @@ def update():
         ssh_password="W817tjes",
         ssh_username="niek",
         remote_bind_address=('0.0.0.0', 3306)) as server:
-
+        
+        # sql query 
         connection = mysql.connector.connect(host='remote.ghaut.nl',
                                              port=3306,
                                              user='niek',

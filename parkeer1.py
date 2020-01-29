@@ -22,8 +22,8 @@ def start():
     GPIO.setup(PIN_ECHO, GPIO.IN)
     
 def calculateDistance():
-    #print("Calculating distance")
 
+    # calculate distance
     GPIO.output(PIN_TRIGGER, GPIO.HIGH)
     time.sleep(0.00001)
     GPIO.output(PIN_TRIGGER, GPIO.LOW)
@@ -40,13 +40,13 @@ def calculateDistance():
 
     distance = round(pulse_duration * 17150, 2)
 
-    #print("Distance:",distance,"cm")
     return distance
-
+# function for turning on red LED
 def turnOnRed():
     GPIO.output(PIN_RED, GPIO.HIGH)
     GPIO.output(PIN_GREEN, GPIO.LOW) 
 
+# function for turning on green LED
 def turnOnGreen():
     GPIO.output(PIN_GREEN, GPIO.HIGH)
     GPIO.output(PIN_RED, GPIO.LOW)
