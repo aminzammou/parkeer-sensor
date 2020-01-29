@@ -45,7 +45,7 @@ def calculateDistance2():
     return distance
 
 def turnOnRed():
-    GPIO.output(PIN_RED, GPIO.LOW)
+    GPIO.output(PIN_RED, GPIO.HIGH)
     GPIO.output(PIN_GREEN, GPIO.LOW) 
 
 def turnOnGreen():
