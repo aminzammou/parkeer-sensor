@@ -8,15 +8,15 @@ def update():
     plekje2 = str(up2.plek2)
     with SSHTunnelForwarder(
         ('remote.ghaut.nl', 22),
-        ssh_password="W817tjes",
-        ssh_username="niek",
+        ssh_password="",
+        ssh_username="",
         remote_bind_address=('0.0.0.0', 3306)) as server:
         
         # sql query 
         connection = mysql.connector.connect(host='remote.ghaut.nl',
                                              port=3306,
-                                             user='niek',
-                                             passwd='W817tjes',
+                                             user='',
+                                             passwd='',
                                              db='prutrecht')
 
         cur = connection.cursor()
